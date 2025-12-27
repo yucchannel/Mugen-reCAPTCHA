@@ -1,27 +1,44 @@
-<DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Am I human?</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Am I human?">
-<meta name="keywords" content="Am I human?, human, ai, chatbot, chat, bot, human, ai, chatbot, chat, bot">
-<meta name="author" content="Am I human?">
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-<meta name="bingbot" content="index, follow">
-<meta name="yandexbot" content="index, follow">
-<meta name="sitemap" content="https://amihuman.com/sitemap.xml">
-<meta name="google-site-verification" content="Am I human?">
+<title>Am I Human?</title>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+  }
+  #result {
+    margin-top: 20px;
+    font-size: 20px;
+    color: green;
+    display: none;
+  }
+</style>
+
+<script>
+  function onHumanVerified() {
+    document.getElementById("result").style.display = "block";
+    document.getElementById("result").innerText = "✅ You are human";
+  }
+</script>
+
 </head>
 <body>
-    <h1>Am i human?</h1>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
-<body>
-  <form action="?" method="POST">
-    <div class="g-recaptcha" data-sitekey="6LecRzgsAAAAAPdacsoigJ-DGhrCDB0lGhloJYHz"></div>
-  </form>
+
+<h2>Am I Human</h2>
+
+<!-- reCAPTCHA -->
+<div class="g-recaptcha"
+     data-sitekey="6Le1STgsAAAAAGgRPyPYR2vYeff18EKfi2EmCom0"
+     data-callback="onHumanVerified">
+</div>
+
+<!-- Message -->
+<div id="result"></div>
+
 </body>
 </html>
-</body> 
